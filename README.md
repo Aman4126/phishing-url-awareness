@@ -21,7 +21,7 @@ Python 3.13.15. No extra packages.
 
 ## How to Run
 Windows: python phishing_checker.py
-Mac/Linux: python3 phishing_checker.py
+
 
 ## Example Output
 ```
