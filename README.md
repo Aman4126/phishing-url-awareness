@@ -17,7 +17,7 @@ a URL and points out a few visible warning signs. It never opens the URL.
 - Malformed input is handled instead of crashing
 
 ## Requirements
-Python 3.10 or later. No extra packages.
+Python 3.13.15. No extra packages.
 
 ## How to Run
 Windows: python phishing_checker.py
