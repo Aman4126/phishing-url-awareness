@@ -49,14 +49,25 @@ Full table: tests/test_samples.md
 ## Screenshots
 ![Sample run](screenshots/sample_run.png)
 ![Test results](screenshots/test_results.png)
-
 ## Improvements
-1. **Loop with quit (A)** - [Write in your words: why you added it. Tested by
-   entering several URLs in one run and typing q.]
-2. **Malformed input handling (C)** - [Why: typing http://[bad raised a
-   ValueError and stopped the program. Fix: a try/except around urlparse. Tested
-   by typing http://[bad and re-running all five samples.]
-3. **Review carefully summary (B)** - [Why, and how you tested it.]
+
+1. **Loop with quit (A)** - The first version closed after one URL, so I
+   had to restart it every time. I added a `while True` loop so I can check many
+   URLs in one run, and typing `q`, `quit` or `exit` ends the program. I tested
+   it by entering several sample URLs in a row and then typing `q`.
+
+2. **Malformed input handling (C)** - Typing `http://[bad` made Python raise a
+   `ValueError` and the program crashed. I wrapped the `urlparse` call in
+   `try/except`, so it now prints "This text is not a valid URL format." and
+   keeps running. I tested it by typing `http://[bad` and then re-running all
+   five sample tests to make sure they still passed.
+
+3. **Review carefully summary (B)** - Before this, the program only listed
+   warnings. I added a `has_warnings()` helper that separates real warnings from
+   information messages, and the program now prints "REVIEW CAREFULLY: N warning
+   sign(s) found." when there are real warnings. I also added the invalid-URL
+   message to the list of information messages so it isn't counted as a warning.
+   I tested it with all five samples and checked that the count was correct.
 
 ## Limitations
 This is an educational tool. It only reads URL text. It does not visit
